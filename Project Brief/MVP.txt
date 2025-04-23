@@ -1,0 +1,93 @@
+Project 1 Create Application Frontend
+
+Minimal Viable Product (MVP)
+
+• Manage Seller
+    o Register a new seller
+    o Display all sellers
+
+• Manage Properties
+    o Add properties
+    o Display all properties
+    o Find and display properties with given search criteria on price, bedrooms,
+        bathroom and garden
+    o Withdraw a property
+    o Resubmit a property
+
+• Manage Buyer
+    o Register new buyer
+    o Display all buyers
+
+----------------------------------------------------------------------------------------
+
+1. Feature: Manage Buyer
+
+    Scenario: Register Buyer
+        Given the new buyer with the given first name and surname does not exist
+        When a create buyer request is received with the given first name and surname
+        Then a new buyer record is created with a buyer ID
+
+----------------------------------------------------------------------------------------
+
+2. Feature: Manage Seller
+
+    Scenario: Register Seller
+        Given a seller with the given first name and surname does not exist
+        When a create seller request is received with the given first name and surname
+        Then a new seller record is created with a seller ID
+
+----------------------------------------------------------------------------------------
+
+3. Feature: Manage Property
+NOTE: A property can have the following status: FORSALE, SOLD, WITHDRAWN
+
+    Scenario: Add Property
+        Given a seller exists for the new property
+        When a create property request for the given seller is received
+        Then the property is added to the catalogue
+        Then the property status is set to FORSALE
+
+    Scenario: Find properties
+        When a Find properties request is received
+        Then a list of properties with the corresponding criteria is shown
+
+    Scenario: Withdraw Property that is FORSALE
+        Given The required Property exists
+        Given The required Property is FORSALE
+        When a Withdrawn property request is received
+        Then property status is changed to WITHDRAWN
+
+    Scenario: Resubmit Property that has been WITHDRAWN
+        Given The required Property exist
+        Given The required Property has been WITHDRAWN
+        When a Resubmit property request is received
+        Then property status is changed to FORSALE
+
+    Scenario: Amend properties details
+        Given The required Property exist
+        Given The required Property is FORSALE
+        When an Amend property request is received
+        Then property details is updated
+
+----------------------------------------------------------------------------------------
+
+4. Feature: Manage Bookings
+Note: Viewing slot is every hour on the hour between 8am to 5pm every day including
+weekends and holidays
+
+    Scenario: Make booking with Slot available
+        Given no active booking exists for the desired time slot for the property
+        Given the property status is FORSALE
+        Given the buyer is registered
+        When a viewing is requested
+        Then a booking is created for the buyer for the property at the given time slot
+
+    Scenario: Make Booking - Time Slot not available
+        Given a booking already exists for the required timeslot for the given property
+        When a viewing is requested is made for that time slot
+        Then an error is shown to the user
+
+    Scenario: Cancel Booking
+        Given a booking exists
+        When a cancel booking request is made
+        Then the booking is removed
