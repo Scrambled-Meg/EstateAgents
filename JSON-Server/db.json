@@ -15,6 +15,21 @@
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 2
+    },
+    {
+      "firstName": "testy",
+      "surname": "Green",
+      "address": "Fairwater, Cardiff",
+      "postcode": "CF1 1AA",
+      "phone": "1234234",
+      "id": 3
+    }, {
+      "firstName": "someone",
+      "surname": "Green",
+      "address": "Fairwater, Cardiff",
+      "postcode": "CF1 1AA",
+      "phone": "1234234",
+      "id": 4
     }
   ],
   "property": [
@@ -65,7 +80,7 @@
       "bathroom": 3,
       "garden": 1,
       "sellerId": 4,
-      "status": "SOLD",
+      "status": "FOR SALE",
       "id": 4
     }
   ],

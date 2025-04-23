@@ -1,4 +1,5 @@
-import {BrowserRouter, Link, Router} from "react-router-dom"
+import {BrowserRouter, Link, Router, Route, Routes} from "react-router-dom"
+import PropertiesList from "./manage-properties/PropertiesList"
 
 function Menu(){
     
@@ -6,9 +7,14 @@ function Menu(){
     <>
     <BrowserRouter>
 
-        <Link> Link 1 </Link>
-        <Link> Link 2 </Link>
+        <Link to="/"> Home </Link>
+        <Link to="/properties"> Properties </Link>
         <Link> Link 3 </Link>
+
+        <Routes>
+            <Route path="/" />
+            <Route path="/properties" element={<PropertiesList />} />
+        </Routes>
 
     </BrowserRouter>
     
