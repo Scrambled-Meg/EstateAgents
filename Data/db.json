@@ -1,0 +1,149 @@
+{
+  "seller": [
+    {
+      "firstName": "Jade",
+      "surname": "Song",
+      "address": "Sichuan, China",
+      "postcode": "1131321",
+      "phone": "",
+      "id": 9
+    },
+    {
+      "firstName": "Nicohola",
+      "surname": "Green",
+      "address": "Fairwater, Cardiff",
+      "postcode": "CF1 1AA",
+      "phone": "1234234",
+      "id": 10
+    },
+    {
+      "firstName": "Shafeeq",
+      "surname": "Khan",
+      "id": 12
+    },
+    {
+      "firstName": "James99",
+      "surname": "Bond991",
+      "id": 13
+    },
+    {
+      "firstName": "James99",
+      "surname": "Bond991",
+      "id": 14
+    },
+    {
+      "firstName": "James99",
+      "surname": "Bond991",
+      "id": 15
+    },
+    {
+      "firstName": "James99",
+      "surname": "Bond991",
+      "id": 16
+    },
+    {
+      "firstName": "James99",
+      "surname": "Bond991",
+      "id": 17
+    },
+    {
+      "firstName": "James99",
+      "surname": "Bond991",
+      "id": 18
+    },
+    {
+      "firstName": "James99",
+      "surname": "Bond991",
+      "id": 19
+    },
+    {
+      "firstName": "Shafeeq ABC UK",
+      "surName": "Abcbcbcbcbcb",
+      "id": 21
+    },
+    {
+      "firstName": " DWP-Shafeeq",
+      "surname": "DWP-Khan",
+      "address": "Manchester, United Kingdom",
+      "id": 22
+    }
+  ],
+  "property": [
+    {
+      "id": 1,
+      "address": "34 OK Place, OK Town",
+      "postcode": "OK1 1OK",
+      "type": "DETACHED",
+      "price": 100000,
+      "bedroom": 3,
+      "bathroom": 1,
+      "garden": 0,
+      "sellerId": 1,
+      "status": "SOLD",
+      "buyerId": 3
+    },
+    {
+      "id": 2,
+      "address": "Somewhere House, Some Street, Some City",
+      "postcode": "SO1 2ME",
+      "type": "APARTMENT",
+      "price": 200000,
+      "bedroom": 1,
+      "bathroom": 1,
+      "garden": 0,
+      "sellerId": 1,
+      "status": "SOLD",
+      "buyerId": 3
+    },
+    {
+      "address": "2 Welsh Street, Ebbw Vale",
+      "postcode": "TR1 1GA",
+      "type": "DETACHED",
+      "price": 125000,
+      "bedroom": 1,
+      "bathroom": 1,
+      "garden": 1,
+      "sellerId": 3,
+      "status": "FOR SALE",
+      "id": 3
+    },
+    {
+      "address": "8 Hilltop, Ebbw Vale",
+      "postcode": "EB1 2VA",
+      "type": "DETACHED",
+      "price": 99000,
+      "bedroom": 3,
+      "bathroom": 3,
+      "garden": 1,
+      "sellerId": 4,
+      "status": "SOLD",
+      "id": 4
+    }
+  ],
+  "buyer": [
+    {
+      "id": 1,
+      "firstName": "Cookie",
+      "surname": "Cat",
+      "address": "42 Pen-y-lan Road, Cardiff",
+      "postcode": "CA1 8RR",
+      "phone": ""
+    },
+    {
+      "id": 2,
+      "firstName": "Nilla",
+      "surname": "Cat",
+      "address": "100 Magor Road, Newport",
+      "postcode": "NP1 2LL",
+      "phone": ""
+    },
+    {
+      "firstName": "Monty",
+      "surname": "Dog",
+      "address": "Very Rich Street, London",
+      "postcode": "W1",
+      "phone": "",
+      "id": 3
+    }
+  ]
+}
