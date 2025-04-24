@@ -31,6 +31,14 @@
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 4
+    },
+    {
+      "id": "31b5",
+      "firstName": "meg",
+      "surname": "test",
+      "address": "sheffielf",
+      "postcode": "NAH",
+      "phone": "087533"
     }
   ],
   "property": [
@@ -73,16 +81,64 @@
       "id": 3
     },
     {
-      "address": "8 Hilltop, Ebbw Vale",
-      "postcode": "EB1 2VA",
-      "type": "DETACHED",
-      "price": 99000,
-      "bedroom": 3,
-      "bathroom": 3,
-      "garden": 1,
-      "sellerId": 4,
-      "status": "FOR SALE",
-      "id": 4
+      "id": "9485",
+      "address": "Apartment 1",
+      "postcode": "A1 2AP",
+      "type": "Apartment",
+      "price": "100000",
+      "bedroom": "2",
+      "bathroom": "1",
+      "garden": "0",
+      "sellerId": "",
+      "status": "FOR SALE"
+    },
+    {
+      "id": "5948",
+      "address": "Bungalow 2",
+      "postcode": "B2 2AP",
+      "type": "Bungalow",
+      "price": "50000",
+      "bedroom": "2",
+      "bathroom": "1",
+      "garden": "0",
+      "sellerId": "",
+      "status": "FOR SALE"
+    },
+    {
+      "id": "52c6",
+      "address": "Detatched 3",
+      "postcode": "D3 2AP",
+      "type": "Detatched",
+      "price": "510000",
+      "bedroom": "2",
+      "bathroom": "1",
+      "garden": "0",
+      "sellerId": "",
+      "status": "FOR SALE"
+    },
+    {
+      "id": "fb4d",
+      "address": "testy",
+      "postcode": "",
+      "type": "House",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": "",
+      "sellerId": "",
+      "status": "FOR SALE"
+    },
+    {
+      "id": "88da",
+      "address": "kjhw",
+      "postcode": "",
+      "type": "House",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": "",
+      "sellerId": "1",
+      "status": "FOR SALE"
     }
   ],
   "buyer": [

@@ -3,7 +3,7 @@ import Menu from './components/Menu'
 
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
-import PropertyAdd from './components/manage-properties/PropertyAdd'
+
 import BuyerAdd from './components/manage-buyer/BuyerAdd'
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
      
 
       <Menu/>
-      <BuyerAdd />
-      <PropertyAdd />
+    
+    
       
      
       

@@ -1,3 +1,5 @@
 in ./application   
     npm run dev
  
+ in ./JSON-Server
+    npx json-server db.json
