@@ -1,5 +1,8 @@
 
 import {useEffect, useState} from "react"
+import Bath from "./images/bath"
+import Bed from "./images/bed"
+import Garden from "./images/Garden"
 
 const PropertiesList = () => {
 
@@ -41,8 +44,8 @@ const PropertiesList = () => {
     return seller.length == 0 ? "Not Known" : seller[0]
     }
 
-
-
+    // call buyer info { findBuyer(property.buyerId).firstName }
+    // call seller info { findSeller(property.sellerId).firstName }
 
     
     
@@ -60,38 +63,27 @@ const PropertiesList = () => {
                 <section>    
                     <table class="center">
                         <tr>
-                            <td colspan="3"> {property.address}, {property.postcode}
-                                seller{
-                                    
-                                    findSeller(property.sellerId).firstName
-                                }
-
-                                buyer {
-
-                                    findBuyer(property.buyerId).firstName
-                        
-
-                                }
-                                </td>
+                            <td colspan="2"><h2> {property.address}, {property.postcode} </h2></td>
                         </tr>
                         <tr>
-                            <td> £{property.price} </td>
-                            <td> {property.type} </td>
-                            <td> {property.status} </td>
+                            <td td colspan="2">
+                                <h3>{property.status} - £{property.price} </h3>
+                            </td>
                         </tr>
                     </table>
-                    <p> INSERT IMAGE HERE </p>
-                    <br />
                     <table class="center">
                         <tr>
-                            <td>Beds:</td>
-                            <td>Bathrooms:</td>
-                            <td>Garden:</td>
+                            <td><Bed /> </td>
+                            <td><Bath /> </td>
+                            <td><Garden /> </td>
                         </tr>
                         <tr>
                             <td> {property.bedroom} </td>
                             <td> {property.bathroom} </td>
                             <td> {property.garden} </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"> This {property.type} property is being sold by: {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname} </td>
                         </tr>
                     </table>
                 </section> 

@@ -9,7 +9,7 @@
       "id": 1
     },
     {
-      "firstName": "Nicohola",
+      "firstName": "Nichola",
       "surname": "Green",
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
@@ -17,15 +17,15 @@
       "id": 2
     },
     {
-      "firstName": "testy",
-      "surname": "Green",
+      "firstName": "Test",
+      "surname": "McTestyFace",
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 3
     }, {
-      "firstName": "someone",
-      "surname": "Green",
+      "firstName": "Adele",
+      "surname": "Smith",
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
       "phone": "1234234",

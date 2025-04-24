@@ -11,7 +11,7 @@ table {
 
 
 a {
-  padding: 14px 15px;
+  padding: 14px 14px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -20,4 +20,9 @@ a {
 section {
   background-color: beige;
   padding: 10px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
 }
