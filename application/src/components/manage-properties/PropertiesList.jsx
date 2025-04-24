@@ -63,15 +63,13 @@ const PropertiesList = () => {
                 <section>    
                     <table class="center">
                         <tr>
-                            <td colspan="2"><h2> {property.address}, {property.postcode} </h2></td>
+                            <td colspan="3"><h2> {property.address}, {property.postcode} </h2></td>
                         </tr>
                         <tr>
-                            <td td colspan="2">
+                            <td td colspan="3">
                                 <h3>{property.status} - £{property.price} </h3>
                             </td>
                         </tr>
-                    </table>
-                    <table class="center">
                         <tr>
                             <td><Bed /> </td>
                             <td><Bath /> </td>
@@ -81,6 +79,9 @@ const PropertiesList = () => {
                             <td> {property.bedroom} </td>
                             <td> {property.bathroom} </td>
                             <td> {property.garden} </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
                         </tr>
                         <tr>
                             <td colspan="3"> This {property.type} property is being sold by: {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname} </td>
