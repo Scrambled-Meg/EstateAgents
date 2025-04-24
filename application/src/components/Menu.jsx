@@ -1,6 +1,8 @@
 import {BrowserRouter, Link, Router, Route, Routes} from "react-router-dom"
 import PropertiesList from "./manage-properties/PropertiesList"
 import BuyersList from "./manage-buyer/BuyersList"
+import SellersList from "./manage-seller/SellersList"
+
 
 function Menu(){
     
@@ -17,9 +19,12 @@ function Menu(){
             <Route path="/" />
             <Route path="/properties" element={<PropertiesList />} />
             <Route path="/buyers" element={< BuyersList />} />
+            <Route path="/sellers" element={< SellersList />} />
         </Routes>
 
     </BrowserRouter>
+
+    
     
 
     </>

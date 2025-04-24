@@ -61,7 +61,7 @@ const PropertiesList = () => {
 
                 <>
                 <section>    
-                    <table class="center">
+                    <table class="tablecard">
                         <tr>
                             <td colspan="3"><h2> {property.address}, {property.postcode} </h2></td>
                         </tr>

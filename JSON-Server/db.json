@@ -23,7 +23,8 @@
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 3
-    }, {
+    },
+    {
       "firstName": "Adele",
       "surname": "Smith",
       "address": "Fairwater, Cardiff",
@@ -108,6 +109,14 @@
       "postcode": "W1",
       "phone": "",
       "id": 3
+    },
+    {
+      "id": "ecad",
+      "firstName": "Testy",
+      "surname": "McTestFace",
+      "address": "Test Address",
+      "postcode": "TE1 2ST",
+      "phone": "06666666"
     }
   ]
 }
