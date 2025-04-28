@@ -11,7 +11,7 @@ import SellersList from "./manage-seller/SellersList"
 import SellerAdd from "./manage-seller/SellerAdd"
 
 
-function Menu(){
+function NavBar(){
     
     return(
     <>
@@ -48,6 +48,14 @@ function Menu(){
 
     </BrowserRouter>
 
+    Property Type:
+    <select id="type" name="type" required>
+        <option value="House">House</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Bungalow">Bungalow</option>
+        <option value="Detatched">Detatched</option>
+    </select>
+
     
     
 
@@ -55,4 +63,4 @@ function Menu(){
     )
 }
 
-export default Menu
+export default NavBar

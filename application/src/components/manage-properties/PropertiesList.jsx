@@ -1,8 +1,8 @@
-
 import {useEffect, useState} from "react"
 import Bath from "./images/bath"
 import Bed from "./images/bed"
 import Garden from "./images/Garden"
+import House from "./images/house"
 
 const PropertiesList = () => {
 
@@ -48,55 +48,51 @@ const PropertiesList = () => {
     // call seller info { findSeller(property.sellerId).firstName }
 
     
-    
 
     useEffect(getData, [])
         return(
             <>
             <h1> List of Properties </h1>
         
-
+        <div className="propGrid">  
             {
                 propertyData.map ( (property)=>
-
-                <>
-                <section>    
-                    <table class="tablecard">
-                        <tr>
-                            <td colspan="3"><h2> {property.address}, {property.postcode} </h2></td>
-                        </tr>
-                        <tr>
-                            <td td colspan="3">
-                                <h3>{property.status} - £{property.price} </h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><Bed /> </td>
-                            <td><Bath /> </td>
-                            <td><Garden /> </td>
-                        </tr>
-                        <tr>
-                            <td> {property.bedroom} </td>
-                            <td> {property.bathroom} </td>
-                            <td> {property.garden} </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"> This {property.type} property is being sold by: {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname} </td>
-                        </tr>
-                    </table>
-                </section> 
-                <br />
-                <br />
-                </>
-
                 
-                
+                    <div className="propCard">
+        
+                    <h1 id="propCardAddress"> {property.address}  </h1> 
+                    <h3 id="propCardPostcode"> {property.postcode} </h3>
+                    <h2>{property.status} - £{property.price} </h2>   
+                    
+                    
+
+
+                    <House />
+
+                    <section>
+
+                        <table class="tableCard">
+                            <tr>
+                                <td> <Bed /> </td>
+                                <td> <h3> {property.bedroom} </h3> </td>
+                                <td> <Bath /> </td>
+                                <td> <h3> {property.bathroom} </h3> </td>
+                                <td> <Garden /> </td>
+                                <td> <h3> {property.garden} </h3> </td>
+                            </tr>
+
+                        </table>
+                    </section>
+
+                    <h2>This {property.type} property is being sold by: </h2>
+                    <h2> {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname}  </h2>
+
+                </ div>
+            
                 
 )     
             }
+            </div>
             </>
         )
 

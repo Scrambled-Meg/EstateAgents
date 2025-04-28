@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 
  const PropertyAdd= () => {
- let [sellers, setSellers] = useState([])
+    
+    let [sellers, setSellers] = useState([])
 
     let handleSubmit = async (e) => {
         let property = {
@@ -75,8 +76,11 @@ import { useEffect, useState } from "react"
                     <td> <input id="bathroom" name="bathroom" type="text" required/> </td>
                 </tr>
                 <tr>
-                    <td> No. of Gardens: </td>
-                    <td> <input id="garden" name="garden" type="text" required/> </td>
+                    <td> Garden: </td>
+                    <td><select id="garden" name="garden" required>
+                            <option value="2">No</option>
+                            <option value="1">Yes</option>
+                        </select> </td>
                 </tr>
             </table>
             <button type="button" onClick={handleSubmit}>Add Property</button>

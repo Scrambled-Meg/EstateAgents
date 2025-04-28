@@ -6,7 +6,7 @@
       "address": "Sichuan, China",
       "postcode": "1131321",
       "phone": "",
-      "id": 1
+      "id": "1"
     },
     {
       "firstName": "Nichola",
@@ -14,7 +14,7 @@
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
       "phone": "1234234",
-      "id": 2
+      "id": "2"
     },
     {
       "firstName": "Test",
@@ -22,7 +22,7 @@
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
       "phone": "1234234",
-      "id": 3
+      "id": "3"
     },
     {
       "firstName": "Adele",
@@ -30,7 +30,7 @@
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
       "phone": "1234234",
-      "id": 4
+      "id": "4"
     },
     {
       "id": "31b5",
@@ -43,42 +43,42 @@
   ],
   "property": [
     {
-      "id": 1,
+      "id": "1",
       "address": "34 OK Place, OK Town",
       "postcode": "OK1 1OK",
       "type": "DETACHED",
-      "price": 100000,
-      "bedroom": 3,
-      "bathroom": 1,
-      "garden": 0,
-      "sellerId": 1,
+      "price": "100000",
+      "bedroom": "3",
+      "bathroom": "1",
+      "garden": "2",
+      "sellerId": "1",
       "status": "SOLD",
-      "buyerId": 3
+      "buyerId": "3"
     },
     {
-      "id": 2,
+      "id": "2",
       "address": "Somewhere House, Some Street, Some City",
       "postcode": "SO1 2ME",
       "type": "APARTMENT",
-      "price": 200000,
-      "bedroom": 1,
-      "bathroom": 1,
-      "garden": 0,
-      "sellerId": 1,
+      "price": "200000",
+      "bedroom": "1",
+      "bathroom": "1",
+      "garden": "2",
+      "sellerId": "1",
       "status": "SOLD",
-      "buyerId": 3
+      "buyerId": "3"
     },
     {
       "address": "2 Welsh Street, Ebbw Vale",
       "postcode": "TR1 1GA",
       "type": "DETACHED",
-      "price": 125000,
-      "bedroom": 1,
-      "bathroom": 1,
-      "garden": 1,
-      "sellerId": 3,
+      "price": "125000",
+      "bedroom": "1",
+      "bathroom": "1",
+      "garden": "1",
+      "sellerId": "3",
       "status": "FOR SALE",
-      "id": 3
+      "id": "3"
     },
     {
       "id": "9485",
@@ -87,8 +87,8 @@
       "type": "Apartment",
       "price": "100000",
       "bedroom": "2",
-      "bathroom": "1",
-      "garden": "0",
+      "bathroom": "2",
+      "garden": "1",
       "sellerId": "",
       "status": "FOR SALE"
     },
@@ -100,7 +100,7 @@
       "price": "50000",
       "bedroom": "2",
       "bathroom": "1",
-      "garden": "0",
+      "garden": "2",
       "sellerId": "",
       "status": "FOR SALE"
     },
@@ -112,7 +112,7 @@
       "price": "510000",
       "bedroom": "2",
       "bathroom": "1",
-      "garden": "0",
+      "garden": "2",
       "sellerId": "",
       "status": "FOR SALE"
     },
@@ -143,7 +143,7 @@
   ],
   "buyer": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "Cookie",
       "surname": "Cat",
       "address": "42 Pen-y-lan Road, Cardiff",
@@ -151,7 +151,7 @@
       "phone": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "Nilla",
       "surname": "Cat",
       "address": "100 Magor Road, Newport",
@@ -164,7 +164,7 @@
       "address": "Very Rich Street, London",
       "postcode": "W1",
       "phone": "",
-      "id": 3
+      "id": "3"
     },
     {
       "id": "ecad",
@@ -173,6 +173,16 @@
       "address": "Test Address",
       "postcode": "TE1 2ST",
       "phone": "06666666"
+    }
+  ],
+  "filter": [
+    {
+      "bathroom": "1",
+      "bedroom": "1",
+      "garden": "2",
+      "min": "",
+      "max": "",
+      "id": "1"
     }
   ]
 }

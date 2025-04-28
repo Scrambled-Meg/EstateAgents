@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import BuyerIcon from "./Icons/BuyerIcon"
  
  
 const Buyers=()=>{
@@ -24,31 +25,21 @@ const Buyers=()=>{
     useEffect(getData,[])
  
     return(
-         <>
-         <h1>List of Buyers</h1>
-         <table>
-            <tr>
-              <td>First Name</td>
-              <td>Surname</td>
-              <td>Address</td>
-              <td>Postcode</td>
-              <td>Phone</td>
-      
-            </tr>
-         {
-            buyersData.map( (buyer)=>
-                <tr>
-                    <td>{buyer.firstName}</td>
-                    <td>{buyer.surname}</td>
-                    <td>{buyer.address}</td>
-                    <td>{buyer.postcode}</td>
-                    <td>{buyer.phone}</td>
-                </tr>
- 
-            )
-         }
-         </table>
-         </>
+        <>
+        <h2>List of Sellers</h2>
+
+        {
+            buyersData.map((buyer)=>
+            <div className="card">  
+                    <BuyerIcon />
+                    <h1> {buyer.firstName} {buyer.surname} </h1>
+                    <h2> {buyer.address}, {buyer.postcode} </h2>
+                    <h2> Contact: {buyer.phone}</h2>
+                    
+            </div>
+        )}
+
+</>
  
     )
  

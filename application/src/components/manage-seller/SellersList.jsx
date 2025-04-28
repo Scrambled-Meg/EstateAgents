@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
+import SellerIcon from "./Icons/SellerIcon"
  
 const SellersList=()=>{
     let [sellersData,setSellers] = useState([])
@@ -19,50 +20,24 @@ const SellersList=()=>{
     useEffect(getData,[])
     
     return(
+
+
         <>
         <h2>List of Sellers</h2>
         
         
-            <table border = "1">
-            <th>First Name</th>
-            <th>Surname</th>
-            <th>Address</th>
-            <th>Post Code</th>
-            <th>Phone</th>
-            <th>Seller ID</th>
-               
-                {
-                
-                sellersData.map((seller)=>
-                    <tr>
-                    <td>
-                        {seller.firstName}
-                    </td>
-                    <td>
-                        {seller.surname}
-                    </td>
-                    <td>
-                        {seller.address}
-                    </td>
-                    <td>
-                        {seller.postcode}
-                    </td>
-                    <td>
-                        {seller.phone}
-                    </td>
-                    <td>
-                        {seller.id}
-                    </td>
-                    {/* <td><Link to={`/properties/${seller.id}`}> Properties </Link></td> */}
-                    </tr>
-           
-           
+        {
+            sellersData.map((seller)=>
+            <div className="card">  
+                    <SellerIcon />
+                    <h1> {seller.firstName} {seller.surname} </h1>
+                    <h2> {seller.address}, {seller.postcode} </h2>
+                    <h2> Contact: {seller.phone}</h2>
+                    
+            </div>
         )}
-        </table>
-        
+ 
         </>
- 
- 
     )
 }
 
