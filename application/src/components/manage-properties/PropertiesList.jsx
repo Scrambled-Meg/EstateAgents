@@ -52,6 +52,7 @@ const PropertiesList = () => {
     useEffect(getData, [])
         return(
             <>
+            <br /><br /><br />
             <h1> List of Properties </h1>
         
         <div className="propGrid">  

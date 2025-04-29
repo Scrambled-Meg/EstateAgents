@@ -1,27 +1,27 @@
-import Menu from './components/Menu'
-import NavBar from './components/NavBar'
+import Header from './components/Menu/Menu3'
+
 import React from 'react'
+import Dropdown from './components/dropdown/Dropdown'
+import DropdownItem from './components/dropdown/DropdownItem'
+import {BrowserRouter, Link, Router, Route, Routes} from "react-router-dom"
 
 import './App.css'
 
 
+import PropertiesList from './components/manage-properties/PropertiesList'
 
 
 
-function App() {
+const App = () => {
 
- 
+
 
   return (
-    <>
-     <h1> Team A's Estate Agents </h1>
-     
-      {/* <Menu/> */}
-      
-      <NavBar />
-      
 
-    </>
+    <div>
+      <Header />
+    </div>
+  
   )
 }
 
