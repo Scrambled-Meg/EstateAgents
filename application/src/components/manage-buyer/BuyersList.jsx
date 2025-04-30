@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import BuyerIcon from "./Icons/BuyerIcon"
  
  
-const Buyers=()=>{
+const BuyersList=()=>{
    
     let [buyersData,setBuyers] = useState([])
  
@@ -45,4 +45,4 @@ const Buyers=()=>{
  
 }
  
-export default Buyers
+export default BuyersList

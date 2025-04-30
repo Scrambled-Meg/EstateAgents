@@ -6,6 +6,8 @@ import DropdownContent from "./DropdownContent";
 import "./Dropdown.css";
 
 
+// onClick={ ( (link go here?) => )} 
+
 const Dropdown = ({ buttonText, content }) => {
 
   const [open, setOpen] = useState(false);

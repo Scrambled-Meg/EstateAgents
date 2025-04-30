@@ -11,9 +11,10 @@
     margin: 0.5rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     cursor: pointer;
+  
 
   }
-  
+
 a {
     color: black;
 }
@@ -40,6 +41,21 @@ a {
    display: flex;
    align-items: center;
    justify-content: center;
+ }
+
+ .name-on-image {
+  position: absolute;
+  right: 5%;
+  left: 5%;
+  Top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: -1px -1px 0 rgba(149, 157, 165, 0.2), 1px -1px 0 rgba(149, 157, 165, 0.2), -1px 1px 0 rgba(149, 157, 165, 0.2), 1px 1px 0 rgba(149, 157, 165, 0.2);
+  /* text-shadow: black 8px 8px 8px;; */
+  font-size: 8vh;
+  font-family: Arial, Helvetica, sans-serif;
  }
 
 .page-content {
