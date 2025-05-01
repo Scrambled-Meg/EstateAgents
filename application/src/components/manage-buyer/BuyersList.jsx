@@ -40,8 +40,6 @@ const BuyersList=()=>{
                     { buyer.phone == "" ? <h3> No contact number provided</h3> : <h3><FaPhoneAlt /> {buyer.phone}</h3>  }
                     <br />
                        
-                         
-                    
             </div>
         )}
 

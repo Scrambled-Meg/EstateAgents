@@ -42,14 +42,20 @@ const PropertyFilter = () => {
     const resetFilters = () => {
         setFilters({type: '', bathroom: '', bedroom: '', garden: ''})
     }
+
+    const min = filters.minPrice ? parseFloat(filters.minPrice) : null
+    const max = filters.maxPrice ? parseFloat(filters.maxPrice) : null
  
-    const filteredProperties = properties.filter(property => {
+    const filteredProperties = properties.filter((property) => {
+        const propertyPrice = parseFloat(property.price)
         return (
+            (min === null || propertyPrice >= min) &&
+            (max === null || propertyPrice <= max) &&
             (filters.type === '' || property.type === filters.type) &&
             (filters.bathroom === '' || property.bathroom === filters.bathroom)&&
             (filters.bedroom === '' || property.bedroom === filters.bedroom)&&
             (filters.garden === '' || property.garden === filters.garden)
-        )
+             )
     })
  
     useEffect(getData, [])
@@ -92,6 +98,8 @@ const PropertyFilter = () => {
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </select>
+                <input type="number" name='minPrice' placeholder="Min Price" value={filters.minPrice} onChange={handleChange}/>
+                <input type="number" name='maxPrice' placeholder="Max Price" value={filters.maxPrice} onChange={handleChange}/>
          
                 <button className="reset-btn" onClick={resetFilters}>Reset Filters</button> 
 
@@ -115,8 +123,9 @@ const PropertyFilter = () => {
                                     <td> <h3> {property.bedroom} </h3> </td>
                                     <td> <FaBath className="icon-list"/> </td>
                                     <td> <h3> {property.bathroom} </h3> </td>
-                                    <td> <LuFence className="icon-list"/></td>
-                                    <td> <h3> {property.garden} </h3> </td>
+                                    { property.garden == "0" ?<></> :  <> <td> <LuFence className="icon-list"/></td>
+                                    <td></td> </>}
+                                    
                                 </tr>
 
                             </table>
