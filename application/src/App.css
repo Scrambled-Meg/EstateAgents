@@ -2,15 +2,7 @@
     height: 100vh;
     width: 100%;
     display: flex;
-   
     background-color: #fcfcfc;
     position: relative;
   }
   
-  .navbar {
-    position: absolute;
-    top: 3rem;
-    left: 1rem;
-    display: flex;
-    gap: 20px;
-  }

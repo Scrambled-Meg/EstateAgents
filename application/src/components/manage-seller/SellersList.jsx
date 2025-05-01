@@ -26,6 +26,7 @@ const SellersList=()=>{
         <h2>List of Sellers</h2>
         
         
+        
         {
             sellersData.map((seller)=>
             <div className="card">  

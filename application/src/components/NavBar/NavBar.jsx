@@ -19,13 +19,11 @@ const NavBar = () => {
 
             <div className='text-on-image'>
                 <Link className="menu-btn" to="/"> Home </Link>
-                <Link className="menu-btn" to="/properties"> Properties </Link>               
-                <Link className="menu-btn" to="/property-add"> Register a Property </Link>    
+                <Link className="menu-btn" to="/properties"> Properties </Link>                
                 <Link className="menu-btn" to="/property-update"> Update a Property </Link>
                 <Link className="menu-btn" to="/buyers"> Buyers </Link>
-                <Link className="menu-btn" to="/buyer-add"> Register as a Buyer </Link>
                 <Link className="menu-btn" to="/sellers"> Sellers </Link>
-                <Link className="menu-btn" to="/seller-add"> Register as a Seller </Link>
+                <Link className="menu-btn" to="/register"> Register with us </Link>
             </div>
 
         </div>

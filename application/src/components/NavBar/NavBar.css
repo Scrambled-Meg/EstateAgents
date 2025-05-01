@@ -9,18 +9,19 @@
     background-color: white;
     border-radius: 0.5rem;
     margin: 0.5rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: #5D5A5D 0px 8px 24px;
     cursor: pointer;
   
 
   }
 
 a {
-    color: black;
+    color: #5D5A5D;
 }
   
   .menu-btn:hover {
-    background-color: rgb(240 249 255);
+    background-color: #5D5A5D;
+    color: white;
   }
 
 .banner {
@@ -52,7 +53,7 @@ a {
   align-items: center;
   justify-content: center;
   color: white;
-  text-shadow: -1px -1px 0 rgba(149, 157, 165, 0.2), 1px -1px 0 rgba(149, 157, 165, 0.2), -1px 1px 0 rgba(149, 157, 165, 0.2), 1px 1px 0 rgba(149, 157, 165, 0.2);
+  text-shadow: #5D5A5D 0px 8px 24px;
   /* text-shadow: black 8px 8px 8px;; */
   font-size: 8vh;
   font-family: Arial, Helvetica, sans-serif;
@@ -61,4 +62,11 @@ a {
 .page-content {
     position: relative;
     top: 50vh;
+}
+
+a {
+  padding: 14px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }

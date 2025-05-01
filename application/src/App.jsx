@@ -6,6 +6,7 @@ import Navbar from './components/NavBar/NavBar'
 
 import './App.css'
 
+import PropertyFilter from './components/manage-properties/PropertiesFilter'
 
 
 import {BrowserRouter, Route, Routes} from "react-router-dom"
@@ -20,11 +21,14 @@ import BuyerAdd from './components/manage-buyer/BuyerAdd'
 import SellersList from './components/manage-seller/SellersList'
 import SellerAdd from './components/manage-seller/SellerAdd'
 
+import Register from './components/Register/register'
+
 
 const App = () => {
 
   return (
-     
+    <div>
+      
       <BrowserRouter>
         
         <Navbar />
@@ -34,7 +38,7 @@ const App = () => {
 
             <Route path="/" />
 
-            <Route path="/properties" element={<PropertiesList />} />
+            <Route path="/properties" element={<PropertyFilter/>} />
             <Route path="/property-add" element={<PropertyAdd />} />
             <Route path="/property-update" element={< PropertyUpdate />} />
 
@@ -42,12 +46,12 @@ const App = () => {
             <Route path="/buyer-add" element={< BuyerAdd />} />
 
             <Route path="/sellers" element={< SellersList />} />
-            <Route path="/seller-add" element={< SellerAdd />} />
+            <Route path="/register" element={< Register />} />
           </Routes>       
         </main>
       </BrowserRouter>
 
-  
+  </div>
   
   )
 }
