@@ -4,7 +4,7 @@ import house from "./house.jpg"
 const House = () => {
     return (
         <div>
-        <img class="propimage" src={house} alt="property image" />
+        <img className="propimage" src={house} alt="property image" />
         </div>
     );
 };

@@ -43,23 +43,23 @@
   ],
   "property": [
     {
-      "id": "1",
       "address": "34 OK Place, OK Town",
       "postcode": "OK1 1OK",
-      "type": "DETACHED",
+      "type": "Detatched",
       "price": "100000",
       "bedroom": "3",
       "bathroom": "1",
       "garden": "0",
       "sellerId": "1",
       "status": "SOLD",
-      "buyerId": "3"
+      "buyerId": "3",
+      "id": "1"
     },
     {
       "id": "2",
       "address": "Somewhere House, Some Street, Some City",
       "postcode": "SO1 2ME",
-      "type": "APARTMENT",
+      "type": "Apartment",
       "price": "200000",
       "bedroom": "1",
       "bathroom": "1",
@@ -71,7 +71,7 @@
     {
       "address": "2 Welsh Street, Ebbw Vale",
       "postcode": "TR1 1GA",
-      "type": "DETACHED",
+      "type": "Detatched",
       "price": "125000",
       "bedroom": "1",
       "bathroom": "1",
@@ -90,7 +90,7 @@
       "bathroom": "2",
       "garden": "1",
       "sellerId": "",
-      "status": "FOR SALE"
+      "status": "WITHDRAWN"
     },
     {
       "id": "5948",

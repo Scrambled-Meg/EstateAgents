@@ -6,3 +6,11 @@
     position: relative;
   }
   
+  .person-icon {
+    
+    float: right;
+    padding: 25px;
+    font-size: 110px;
+    vertical-align: middle;
+
+  }

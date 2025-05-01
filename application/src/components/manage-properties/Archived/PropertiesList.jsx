@@ -1,8 +1,4 @@
 import {useEffect, useState} from "react"
-import Bath from "./images/bath"
-import Bed from "./images/bed"
-import Garden from "./images/Garden"
-import House from "./images/house"
 
 const PropertiesList = () => {
 

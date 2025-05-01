@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import BuyerIcon from "./Icons/BuyerIcon"
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { FaPhoneAlt } from "react-icons/fa";
+
  
  
 const BuyersList=()=>{
@@ -26,15 +27,20 @@ const BuyersList=()=>{
  
     return(
         <>
-        <h2>List of Sellers</h2>
+        <br />
+        <h1 className="center"> Our Buyers</h1>
 
         {
             buyersData.map((buyer)=>
-            <div className="card">  
-                    <BuyerIcon />
-                    <h1> {buyer.firstName} {buyer.surname} </h1>
-                    <h2> {buyer.address}, {buyer.postcode} </h2>
-                    <h2> Contact: {buyer.phone}</h2>
+            <div className="card"> 
+                    <br />
+                    <IoPersonCircleOutline className="person-icon" />
+                    <h2> {buyer.firstName} {buyer.surname} </h2>
+                    <h3> {buyer.address}, {buyer.postcode} </h3>
+                    { buyer.phone == "" ? <h3> No contact number provided</h3> : <h3><FaPhoneAlt /> {buyer.phone}</h3>  }
+                    <br />
+                       
+                         
                     
             </div>
         )}

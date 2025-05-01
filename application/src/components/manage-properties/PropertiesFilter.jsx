@@ -1,20 +1,37 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import House from "./images/house"
-import Bath from "./images/bath"
-import Bed from "./images/bed"
-import Garden from "./images/Garden"
+
 import "./properties.css"
+
+import { FaBath } from "react-icons/fa";
+import { LuFence } from "react-icons/lu";
+import { IoBed } from "react-icons/io5";
+
+
 
  
 const PropertyFilter = () => {
     const [properties, setproperties] = useState([])
-    const [filters, setFilters] = useState({type: '', bathroom: ''})
+    const [filters, setFilters] = useState({type: '', bathroom: '', bedroom: '', garden: ''})
+    const [sellerData, setSellerData] = useState ([])
+ 
+    const getData = () => {
+        let fetchSellers = fetch("http://localhost:3000/seller")
+        fetchSellers.then( (response) => response.json().then( (data) => setSellerData(data) ))
+    }
+ 
+    const findSeller=(sellerId) => {
+        let seller = sellerData.filter( (seller) => seller.id == sellerId)
+        return seller.length == 0 ? "Not Known" : seller[0]
+    }
  
     useEffect (() =>{
         fetch("http://localhost:3000/property")
         .then((res) => res.json())
-        .then((data) => {
-            setproperties(data)
+        .then(data => {
+            const forSale = data.filter(property => property.status === 'FOR SALE')   
+            setproperties(forSale)
         })
     }, [])
  
@@ -23,79 +40,95 @@ const PropertyFilter = () => {
     }
  
     const resetFilters = () => {
-        setFilters({type: '', bathroom: ''})
+        setFilters({type: '', bathroom: '', bedroom: '', garden: ''})
     }
  
     const filteredProperties = properties.filter(property => {
         return (
             (filters.type === '' || property.type === filters.type) &&
-            (filters.bathroom === '' || property.bathroom === filters.bathroom)
+            (filters.bathroom === '' || property.bathroom === filters.bathroom)&&
+            (filters.bedroom === '' || property.bedroom === filters.bedroom)&&
+            (filters.garden === '' || property.garden === filters.garden)
         )
     })
  
+    useEffect(getData, [])
+ 
     return (
         <>
-            <h2>Filtered Properties</h2>
-            <div style={{marginBotton:'1rem'}}>
-                <select name='type' onChange={handleChange} value={filters.type}>
-                    <option value="">All types</option>
-                    <option value="APARTMENT">APARTMENT</option>
-                    <option value="DETACHED">DETACHED</option>
+            
+            <Link className="menu-btn" to="/property-add"> Register a Property </Link> 
+            <Link className="menu-btn" to="/property-update"> Update a Property </Link> 
+            <Link className="menu-btn" to="/properties-withdrawn"> View Withdrawn Properties </Link> 
+            <br /><br />
+        
+            <h1 className="center"> Properties for Sale </h1> <br />
+
+            <div className="filter-bar" style={{marginBotton:'1rem'}}>
+                <select className="menu-select" name='type' onChange={handleChange} value={filters.type}>
+                    <option value=''>Types</option>
+                    <option value="Apartment">APARTMENT</option>
+                    <option value="Detatched">DETACHED</option>
+                    <option value="Bungalow">BUNGALOW</option>
                 </select>
-                <select name='bathroom' onChange={handleChange} value={filters.bathroom}>
-                    <option value="">How Many Bathrooms</option>
+                <select className="menu-select" name='bathroom' onChange={handleChange} value={filters.bathroom}>
+                    <option value=''>Bathrooms</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
+                <select className="menu-select" name='bedroom' onChange={handleChange} value={filters.bedroom}>
+                    <option value=''>Bedrooms</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <select className="menu-select" name='garden' onChange={handleChange} value={filters.garden}>
+                    <option value=''>Garden</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+         
+                <button className="reset-btn" onClick={resetFilters}>Reset Filters</button> 
+
             </div>
-            <button onClick={resetFilters}>Reset Filters</button>
-
+            <br /><br />
+            <div className="propGrid">  
             
+                {filteredProperties.map(property => (
+                    <div className="propCard">
+                        <h1 id="propCardAddress"> {property.address}  </h1> 
+                        <h3 id="propCardPostcode"> {property.postcode} </h3>
+                        <h2>{property.status} - £{property.price} </h2>   
+                    
+                        <House />
+
+                        <section>
+
+                            <table class="tableCard">
+                                <tr>
+                                    <td> <IoBed className="icon-list"/> </td>
+                                    <td> <h3> {property.bedroom} </h3> </td>
+                                    <td> <FaBath className="icon-list"/> </td>
+                                    <td> <h3> {property.bathroom} </h3> </td>
+                                    <td> <LuFence className="icon-list"/></td>
+                                    <td> <h3> {property.garden} </h3> </td>
+                                </tr>
+
+                            </table>
+                        </section>
+
+                        <h2>This {property.type} property is being sold by: </h2>
+                        <h2> {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname}  </h2>
+                    </ div>
+                ))}
+            
+            </div>
             <br /><br /><br />
-
-            <h1 className="center"> List of Properties </h1> <br /><br />
-        
-        <div className="propGrid">  
-            
-            {filteredProperties.map(property => (
-                <div className="propCard">
-        
-                <h1 id="propCardAddress"> {property.address}  </h1> 
-                <h3 id="propCardPostcode"> {property.postcode} </h3>
-                <h2>{property.status} - £{property.price} </h2>   
-                
-                
-
-
-                <House />
-
-                <section>
-
-                    <table class="tableCard">
-                        <tr>
-                            <td> <Bed className="icon"/> </td>
-                            <td> <h3> {property.bedroom} </h3> </td>
-                            <td> <Bath /> </td>
-                            <td> <h3> {property.bathroom} </h3> </td>
-                            <td> <Garden /> </td>
-                            <td> <h3> {property.garden} </h3> </td>
-                        </tr>
-
-                    </table>
-                </section>
-
-                <h2>This {property.type} property is being sold by: </h2>
-                {/* <h2> {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname}  </h2> */}
-
-            </ div>
-
-
-            )  
-            )     
-            }
-            
-        </div>
-           
     </>
     )
 }

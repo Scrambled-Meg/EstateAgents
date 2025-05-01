@@ -1,19 +1,14 @@
 
 import React from 'react'
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import './App.css'
 
 import Navbar from './components/NavBar/NavBar'
 
-
-import './App.css'
-
 import PropertyFilter from './components/manage-properties/PropertiesFilter'
-
-
-import {BrowserRouter, Route, Routes} from "react-router-dom"
-
-import PropertiesList from './components/manage-properties/PropertiesList'
 import PropertyAdd from './components/manage-properties/PropertyAdd'
 import PropertyUpdate from './components/manage-properties/PropertyUpdate'
+import PropertiesWithdrawn from './components/manage-properties/PropertiesWithdrawn'
 
 import BuyersList from './components/manage-buyer/BuyersList'
 import BuyerAdd from './components/manage-buyer/BuyerAdd'
@@ -33,7 +28,7 @@ const App = () => {
         
         <Navbar />
         
-        <main>
+        
           <Routes>
 
             <Route path="/" />
@@ -41,14 +36,17 @@ const App = () => {
             <Route path="/properties" element={<PropertyFilter/>} />
             <Route path="/property-add" element={<PropertyAdd />} />
             <Route path="/property-update" element={< PropertyUpdate />} />
+            <Route path="/properties-withdrawn" element={< PropertiesWithdrawn />} />
 
             <Route path="/buyers" element={< BuyersList />} />
             <Route path="/buyer-add" element={< BuyerAdd />} />
 
             <Route path="/sellers" element={< SellersList />} />
+            <Route path="/seller-add" element={< SellerAdd />} />
+
             <Route path="/register" element={< Register />} />
           </Routes>       
-        </main>
+        
       </BrowserRouter>
 
   </div>
