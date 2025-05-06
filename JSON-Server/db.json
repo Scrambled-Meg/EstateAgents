@@ -1,154 +1,176 @@
 {
   "seller": [
     {
+      "id": "1",
       "firstName": "Jade",
       "surname": "Song",
-      "address": "Sichuan, China",
-      "postcode": "1131321",
-      "phone": "",
-      "id": "1"
+      "address": "73 HOLBURN STREET",
+      "postcode": "AB10 6DN",
+      "phone": "01224211670"
     },
     {
+      "id": "2",
       "firstName": "Nichola",
       "surname": "Green",
-      "address": "Fairwater, Cardiff",
+      "address": "THE CITADEL, BATH ROAD",
       "postcode": "CF1 1AA",
-      "phone": "1234234",
-      "id": "2"
+      "phone": ""
     },
     {
-      "firstName": "Test",
-      "surname": "McTestyFace",
-      "address": "Fairwater, Cardiff",
-      "postcode": "CF1 1AA",
-      "phone": "1234234",
-      "id": "3"
+      "id": "3",
+      "firstName": "Joseph",
+      "surname": "Ramsay-Watson",
+      "address": "12 SOUTH BRIDGE",
+      "postcode": "EH1 1DD",
+      "phone": ""
     },
     {
+      "id": "4",
       "firstName": "Adele",
       "surname": "Smith",
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
-      "phone": "1234234",
-      "id": "4"
+      "phone": ""
     },
     {
-      "id": "31b5",
-      "firstName": "meg",
-      "surname": "test",
-      "address": "sheffielf",
-      "postcode": "NAH",
-      "phone": "087533"
+      "id": "5",
+      "firstName": "Meg",
+      "surname": "Scott",
+      "address": "33 SOUTHGATE STREET",
+      "postcode": "GL1 1TA",
+      "phone": "01452876470"
+    },
+    {
+      "id": "6",
+      "firstName": "Sukwinder",
+      "surname": "Uppal",
+      "address": "27 COLMORE ROW",
+      "postcode": "B3 2EW",
+      "phone": "01216858301"
+    },
+    {
+      "id": "7",
+      "firstName": "John",
+      "surname": "Goldsmith",
+      "address": "57 GREAT GEORGE STREET",
+      "postcode": "LS1 3AJ",
+      "phone": "01132428715"
     }
   ],
   "property": [
     {
-      "address": "34 OK Place, OK Town",
-      "postcode": "OK1 1OK",
+      "address": "111 WEST GEORGE STREET",
+      "postcode": "G2 1QX",
       "type": "Detatched",
-      "price": "100000",
+      "price": "125000",
       "bedroom": "3",
-      "bathroom": "1",
-      "garden": "0",
-      "sellerId": "1",
-      "status": "SOLD",
-      "buyerId": "3",
+      "bathroom": "2",
+      "garden": "no",
+      "sellerId": "5",
+      "status": "FOR SALE",
+      "buyerId": "",
       "id": "1"
     },
     {
       "id": "2",
-      "address": "Somewhere House, Some Street, Some City",
-      "postcode": "SO1 2ME",
+      "address": "34 BUCKINGHAM PALACE ROAD",
+      "postcode": "SW1W 0RH",
       "type": "Apartment",
-      "price": "200000",
+      "price": "2000000",
       "bedroom": "1",
       "bathroom": "1",
       "garden": "0",
-      "sellerId": "1",
-      "status": "SOLD",
-      "buyerId": "3"
+      "sellerId": "6",
+      "status": "FOR SALE",
+      "buyerId": ""
     },
     {
-      "address": "2 Welsh Street, Ebbw Vale",
-      "postcode": "TR1 1GA",
+      "id": "3",
+      "address": "94 LONDON ROAD, HEADINGTON",
+      "postcode": "OX3 9FN",
       "type": "Detatched",
       "price": "125000",
-      "bedroom": "1",
-      "bathroom": "1",
+      "bedroom": "2",
+      "bathroom": "3",
       "garden": "1",
       "sellerId": "3",
       "status": "FOR SALE",
-      "id": "3"
+      "buyerId": ""
     },
     {
       "id": "9485",
-      "address": "Apartment 1",
-      "postcode": "A1 2AP",
+      "address": "COMMERCE HOUSE, HIGH ST",
+      "postcode": "B72 1AB",
       "type": "Apartment",
       "price": "100000",
-      "bedroom": "2",
+      "bedroom": "5",
       "bathroom": "2",
       "garden": "1",
-      "sellerId": "",
-      "status": "WITHDRAWN"
+      "sellerId": "5",
+      "status": "WITHDRAWN",
+      "buyerId": ""
     },
     {
       "id": "5948",
-      "address": "Bungalow 2",
-      "postcode": "B2 2AP",
+      "address": "7-9 CLIFFORD STREET",
+      "postcode": "YO1 9RA",
       "type": "Bungalow",
       "price": "50000",
       "bedroom": "2",
       "bathroom": "1",
       "garden": "0",
-      "sellerId": "",
-      "status": "FOR SALE"
+      "sellerId": "4",
+      "status": "SOLD",
+      "buyerId": "3"
     },
     {
       "id": "52c6",
-      "address": "Detatched 3",
-      "postcode": "D3 2AP",
+      "address": "210 UPPER RICHMOND ROAD",
+      "postcode": "SW15 6 TE",
       "type": "Detatched",
       "price": "510000",
       "bedroom": "2",
       "bathroom": "1",
       "garden": "0",
-      "sellerId": "",
-      "status": "FOR SALE"
+      "sellerId": "7",
+      "status": "FOR SALE",
+      "buyerId": ""
     }
   ],
   "buyer": [
     {
       "id": "1",
-      "firstName": "Cookie",
-      "surname": "Cat",
-      "address": "42 Pen-y-lan Road, Cardiff",
-      "postcode": "CA1 8RR",
-      "phone": ""
+      "firstName": "James",
+      "surname": "Earl Jones",
+      "address": "Cabin 2, The Death Star",
+      "postcode": "YUR F4R",
+      "phone": "01413576861"
     },
     {
       "id": "2",
-      "firstName": "Nilla",
-      "surname": "Cat",
-      "address": "100 Magor Road, Newport",
-      "postcode": "NP1 2LL",
+      "firstName": "Steve",
+      "surname": "Rogers",
+      "address": "Camp Lehigh, New Jersey",
+      "postcode": "CPT 4MCA",
+      "phone": "01132429176"
+    },
+    {
+      "id": "3",
+      "firstName": "Luke",
+      "surname": "Skywalker",
+      "address": "14 Dirt Mound, Tatouine",
+      "postcode": "TH3 4CE",
+      "phone": "602089962282"
+    },
+    {
+      "id": "4",
+      "firstName": "Bilbo",
+      "surname": "Baggins",
+      "address": "Bag End, The Shire",
+      "postcode": "B8G EN4",
       "phone": ""
-    },
-    {
-      "firstName": "Monty",
-      "surname": "Dog",
-      "address": "Very Rich Street, London",
-      "postcode": "W1",
-      "phone": "",
-      "id": "3"
-    },
-    {
-      "id": "ecad",
-      "firstName": "Testy",
-      "surname": "McTestFace",
-      "address": "Test Address",
-      "postcode": "TE1 2ST",
-      "phone": "06666666"
     }
+  ],
+  "bookings": [
   ]
 }

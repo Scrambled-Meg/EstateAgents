@@ -15,7 +15,7 @@ const NavBar = () => {
             <NavBarImg/>
             </div>
 
-            <h2 className="name-on-image"> DOGHOUSE & CO LLP </h2>
+            <h2 className="name-on-image"> DOGHOUSE & CO. </h2>
 
             <div className='text-on-image'>
                 <Link className="menu-btn" to="/"> Home </Link>

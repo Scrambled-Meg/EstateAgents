@@ -98,8 +98,8 @@ const PropertyFilter = () => {
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </select>
-                <input type="number" name='minPrice' placeholder="Min Price" value={filters.minPrice} onChange={handleChange}/>
-                <input type="number" name='maxPrice' placeholder="Max Price" value={filters.maxPrice} onChange={handleChange}/>
+                <input className="menu-select" type="number" name='minPrice' placeholder="Min Price" value={filters.minPrice} onChange={handleChange}/>
+                <input className="menu-select" type="number" name='maxPrice' placeholder="Max Price" value={filters.maxPrice} onChange={handleChange}/>
          
                 <button className="reset-btn" onClick={resetFilters}>Reset Filters</button> 
 
@@ -133,6 +133,7 @@ const PropertyFilter = () => {
 
                         <h2>This {property.type} property is being sold by: </h2>
                         <h2> {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname}  </h2>
+                        <Link className="menu-btn" to="/properties-booking"> Book a Viewing </Link> 
                     </ div>
                 ))}
             

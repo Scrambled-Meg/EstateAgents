@@ -9,6 +9,7 @@ import PropertyFilter from './components/manage-properties/PropertiesFilter'
 import PropertyAdd from './components/manage-properties/PropertyAdd'
 import PropertyUpdate from './components/manage-properties/PropertyUpdate'
 import PropertiesWithdrawn from './components/manage-properties/PropertiesWithdrawn'
+import PropertyViewBooking from './components/manage-properties/PropertiesBooking'
 
 import BuyersList from './components/manage-buyer/BuyersList'
 import BuyerAdd from './components/manage-buyer/BuyerAdd'
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/property-add" element={<PropertyAdd />} />
             <Route path="/property-update" element={< PropertyUpdate />} />
             <Route path="/properties-withdrawn" element={< PropertiesWithdrawn />} />
+            <Route path="/properties-booking" element={< PropertyViewBooking />} />
 
             <Route path="/buyers" element={< BuyersList />} />
             <Route path="/buyer-add" element={< BuyerAdd />} />
