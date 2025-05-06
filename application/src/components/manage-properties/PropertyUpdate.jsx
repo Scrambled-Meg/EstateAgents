@@ -61,11 +61,11 @@ const PropertyUpdate = ()=>{
                     <option value="">Select a Property</option>
                         {properties.map((property)=>(
                             <option key={property.id} value={property.id}>
-                                {property.address},
-                                {property.postcode}
+                                {property.address}, {property.postcode}
                             </option>
                         ))}
-            </select></div><br />
+                </select>
+            </div><br />
             
         {selectedPropertyid && (
         <form onSubmit={handleSave}>
