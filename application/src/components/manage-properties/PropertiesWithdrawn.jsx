@@ -60,7 +60,7 @@ const PropertiesWithdrawn= () => {
             <Link className="menu-btn" to="/property-add"> Register a Property </Link> 
             <Link className="menu-btn" to="/property-update"> Update a Property </Link> 
             <Link className="menu-btn" to="/properties"> View Properties for Sale </Link> 
-            <br /><br />
+            <br /><br /><br />
         
             <h1 className="center"> Withdrawn Properties </h1> <br />
 

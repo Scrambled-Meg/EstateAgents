@@ -74,9 +74,11 @@ const PropertyFilter = () => {
             <div className="filter-bar" style={{marginBotton:'1rem'}}>
                 <select className="menu-select" name='type' onChange={handleChange} value={filters.type}>
                     <option value=''>Types</option>
-                    <option value="Apartment">APARTMENT</option>
-                    <option value="Detatched">DETACHED</option>
-                    <option value="Bungalow">BUNGALOW</option>
+                        <option value="Bungalow">Bungalow</option>
+                        <option value="House">House</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Studio">Studio</option>
+                        <option value="Commercial">Commercial</option>
                 </select>
                 <select className="menu-select" name='bathroom' onChange={handleChange} value={filters.bathroom}>
                     <option value=''>Bathrooms</option>

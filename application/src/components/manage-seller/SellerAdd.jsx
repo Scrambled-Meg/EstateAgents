@@ -32,14 +32,16 @@ const SellerAdd= () => {
                 body: JSON.stringify(formData)
             })
             alert('Weclome to the Doghouse')
+            setFormData({firstName: '', surname: '', address: '', postcode: '', phone: ''})
         }
     }
+ 
  
     return (
         <div >
             <br />
             <h1 className="center">Add New Seller Details</h1><br />
-            <form >
+            <form onSubmit={handleSubmit}>
                 <table className="table-center">
                     <h3>
                     <tr>
@@ -72,7 +74,7 @@ const SellerAdd= () => {
                 </table>
                 <br />
                 <footer className="center">
-                    <button  className="form-btn" type="button" onClick={handleSubmit}>Add Seller</button>   
+                    <button  className="form-btn" type="submit" onClick={handleSubmit}>Add Seller</button>   
                 </footer>
 
 

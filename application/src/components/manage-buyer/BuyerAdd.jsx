@@ -1,5 +1,4 @@
 import {useState} from "react"
-import "../form.css"
  
 const BuyerAdd= () => {
     let [formData, setFormData] = useState({firstName: '', surname: '', address: '', postcode: '', phone: ''});
@@ -32,14 +31,15 @@ const BuyerAdd= () => {
                 body: JSON.stringify(formData)
             })
             alert('Weclome to the Doghouse')
+            setFormData({firstName: '', surname: '', address: '', postcode: '', phone: ''})
         }
     }
- 
+
     return (
         <div>
             <br />
         <h1 className="center">Add New Buyer Details</h1><br />
-        <form >
+        <form onSubmit={handleSubmit}>
             <table className="table-center">
                 <h3>
                 <tr>
@@ -71,7 +71,7 @@ const BuyerAdd= () => {
             </table>
             <br />
             <footer className="center">
-                <button className="form-btn" type="button" onClick={handleSubmit}>Add Buyer</button>
+                <button className="form-btn" type="submit">Add Buyer</button>
     
             </footer>
         </form>

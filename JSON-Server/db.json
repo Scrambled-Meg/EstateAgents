@@ -63,21 +63,13 @@
       "address": "64 Zoo Lane",
       "postcode": "ZL1 2BC",
       "phone": "0110382982"
-    },
-    {
-      "id": "13f4",
-      "firstName": "",
-      "surname": "",
-      "address": "",
-      "postcode": "",
-      "phone": ""
     }
   ],
   "property": [
     {
       "address": "111 WEST GEORGE STREET",
       "postcode": "G2 1QX",
-      "type": "Detatched",
+      "type": "House",
       "price": "125000",
       "bedroom": "3",
       "bathroom": "2",
@@ -104,7 +96,7 @@
       "id": "3",
       "address": "94 LONDON ROAD, HEADINGTON",
       "postcode": "OX3 9FN",
-      "type": "Detatched",
+      "type": "Studio",
       "price": "125000",
       "bedroom": "2",
       "bathroom": "3",
@@ -143,7 +135,7 @@
       "id": "52c6",
       "address": "210 UPPER RICHMOND ROAD",
       "postcode": "SW15 6 TE",
-      "type": "Detatched",
+      "type": "Bungalow",
       "price": "510000",
       "bedroom": "2",
       "bathroom": "1",
@@ -151,6 +143,18 @@
       "sellerId": "7",
       "status": "FOR SALE",
       "buyerId": ""
+    },
+    {
+      "id": "4f3a",
+      "address": "13 Westfield Close",
+      "postcode": "G7 2EN",
+      "type": "Bungalow",
+      "price": "125000",
+      "bedroom": "5",
+      "bathroom": "2",
+      "garden": "1",
+      "sellerId": "2",
+      "status": "FOR SALE"
     }
   ],
   "buyer": [
@@ -184,14 +188,6 @@
       "surname": "Baggins",
       "address": "Bag End, The Shire",
       "postcode": "B8G EN4",
-      "phone": ""
-    },
-    {
-      "id": "8b88",
-      "firstName": "",
-      "surname": "",
-      "address": "",
-      "postcode": "",
       "phone": ""
     }
   ],
