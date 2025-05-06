@@ -1,79 +1,87 @@
-import { useEffect, useState } from "react"
-
- const PropertyAdd= () => {
-    
+import {useState, useEffect} from "react"
+import "../form.css"
+ 
+const PropertyAdd= () => {
     let [sellers, setSellers] = useState([])
-
-    let handleSubmit = async (e) => {
-        let property = {
-                "address": document.getElementById("address").value,
-                "postcode": document.getElementById("postcode").value,
-                "type": document.getElementById("type").value,
-                "price": document.getElementById("price").value,
-                "bedroom": document.getElementById("bedroom").value,
-                "bathroom": document.getElementById("bathroom").value,
-                "garden": document.getElementById("garden").value,
-                "sellerId": document.getElementById("seller").value,
-                "status": "FOR SALE"
-        }
-        let response = await fetch("http://localhost:3000/property", {
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(property),
-        })
+    let [formData, setFormData] = useState({address: '', postcode: '', type: '', price: '', bedroom: '', bathroom: '', garden: '', sellerId: '', status: 'FOR SALE'});
+ 
+    let handleChange = (e) => {
+        let {name, value} = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: name === 'postcode'? value.toUpperCase():value,
+        }))
     }
-
+ 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const response = await fetch("http://localhost:3000/property")
+        const existingProperty = await response.json()
+ 
+        const duplicate = existingProperty.some((property) =>
+            property.address === formData.address &&
+            property.postcode === formData.postcode
+        )
+ 
+        if (duplicate){
+            alert ('Already registered!')
+        }
+        else{
+            fetch("http://localhost:3000/property",{
+                method: 'POST',
+                headers:{'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            })
+            alert('Property added for sale!')
+        }
+    }
+    
     const getSellers = () => {
         let sellers = fetch("http://localhost:3000/seller")
         sellers.then( (response) => response.json().then( (records) => setSellers(records)))
     }
- 
     useEffect(getSellers, [])
-
+ 
     return (
         <div>
-        <h1> Register a new property </h1>
+        <h1>Register a new property for sale</h1>
+        <h3>If you are not registered as a seller, please do that first</h3>
+        <br/>
         <form >
             <table>
                 <tr>
                     <td> Property Address: </td>
-                    <td> <input id="address" name="address" type="text" required/> </td>
+                    <td> <input name="address" type="text" value={formData.address} onChange={handleChange}/> </td>
                 </tr>
                 <tr>
                     <td> Property Postcode: </td>
-                    <td> <input id="postcode" name="postcode" type="text" required/> </td>
+                    <td> <input name="postcode" type="text" value={formData.postcode} onChange={handleChange}/> </td>
                 </tr>
                 <tr>
                     <td> Property Type: </td>
-                    <td><select id="type" name="type" required>
-                            <option value="House">House</option>
-                            <option value="Apartment">Apartment</option>
-                            <option value="Bungalow">Bungalow</option>
-                            <option value="Detatched">Detatched</option>
-                        </select> </td>
+                    <td> <input name="type" type="text" value={formData.type} onChange={handleChange}/> </td>
                 </tr>
                 <tr>
                     <td> Seller Name: </td>
                     <td><select id="seller" name="seller" required>
                            {
-                            sellers.map( (seller) => 
+                            sellers.map( (seller) =>
                             <option value={seller.id}> {seller.firstName} {seller.surname} {} </option>
                             )
                            }
                         </select> </td>
                 </tr>
-
                 <tr>
-                    <td> Asking Price:</td>
-                    <td> <input id="price" name="price" type="text" required/> </td>
+                    <td> Asking Price: </td>
+                    <td> <input name="price" type="text" value={formData.price} onChange={handleChange}/> </td>
                 </tr>
                 <tr>
-                    <td> No. of Bedrooms: </td>
-                    <td> <input id="bedroom" name="bedroom" type="text" required/> </td>
+                    <td> Number of Bedrooms: </td>
+                    <td> <input name="bedroom" type="text" value={formData.bedroom} onChange={handleChange}/> </td>
                 </tr>
                 <tr>
-                    <td> No. of Bathrooms: </td>
-                    <td> <input id="bathroom" name="bathroom" type="text" required/> </td>
+                    <td> Number of Bathrooms: </td>
+                    <td> <input name="bathroom" type="text" value={formData.bathroom} onChange={handleChange}/> </td>
                 </tr>
                 <tr>
                     <td> Garden: </td>

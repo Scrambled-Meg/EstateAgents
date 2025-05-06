@@ -55,6 +55,22 @@
       "address": "57 GREAT GEORGE STREET",
       "postcode": "LS1 3AJ",
       "phone": "01132428715"
+    },
+    {
+      "id": "da10",
+      "firstName": "Daphne",
+      "surname": "Blake",
+      "address": "64 Zoo Lane",
+      "postcode": "ZL1 2BC",
+      "phone": "0110382982"
+    },
+    {
+      "id": "13f4",
+      "firstName": "",
+      "surname": "",
+      "address": "",
+      "postcode": "",
+      "phone": ""
     }
   ],
   "property": [
@@ -65,7 +81,7 @@
       "price": "125000",
       "bedroom": "3",
       "bathroom": "2",
-      "garden": "no",
+      "garden": "1",
       "sellerId": "5",
       "status": "FOR SALE",
       "buyerId": "",
@@ -169,8 +185,15 @@
       "address": "Bag End, The Shire",
       "postcode": "B8G EN4",
       "phone": ""
+    },
+    {
+      "id": "8b88",
+      "firstName": "",
+      "surname": "",
+      "address": "",
+      "postcode": "",
+      "phone": ""
     }
   ],
-  "bookings": [
-  ]
+  "bookings": []
 }

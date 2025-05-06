@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react"
+import "../form.css"
  
 const PropertyViewBooking = () => {
     const [properties, setProperties] = useState([])
@@ -19,72 +20,108 @@ const PropertyViewBooking = () => {
         })
     }
  
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        fetch("http://localhost:3000/bookings",{
-            method: 'POST',
-            headers:{'Content-Type': 'application/json'},
-            body: JSON.stringify(formData)
-        })
-        .then(() => alert('Booking Confirmed!'))
+        const response = await fetch('http://localhost:3000/bookings')
+        const existingBookings = await response.json()
+ 
+        const duplicate = existingBookings.some((booking) =>
+            booking.propertyId === formData.propertyId &&
+            booking.date === formData.date &&
+            booking.time === formData.time
+        )
+ 
+        if (duplicate){
+            alert ('Already Booked! Please choose another time/date')
+        }
+        else{
+            fetch("http://localhost:3000/bookings",{
+                method: 'POST',
+                headers:{'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            })
+            alert('Booking Confirmed!')
+        }
     }
  
     return (
         <div>
-            <h2>Book a Viewing</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    First Name: <input type="text" name="firstname" value={formData.firstName} onChange={handleChange} required/>
-                </label>
+            <br />
+            <h1 className="center">Book a Viewing</h1><br />
+
+            <form onSubmit={handleSubmit} >
+                <table className="table-center">
+                    <h3>
+                    <tr>
+                        <td className="td-right">First Name: </td>
+                        <td><input className="input-form" type="text" name="firstname" value={formData.firstName} onChange={handleChange} required/></td>
+                        <td className="ast">*</td>
+                    </tr>
+                    <tr>
+                        <td className="td-right">Last Name: </td>
+                        <td><input className="input-form" type="text" name="surname" value={formData.surname} onChange={handleChange} required/></td>
+                        <td className="ast">*</td>
+                    </tr>
+                    <tr>
+                        <td className="td-right">Current Address:</td>
+                        <td><input className="input-form" type="text" name="address" value={formData.address} onChange={handleChange}required/></td>
+                        <td className="ast">*</td>
+                    </tr>
+                    <tr>
+                        <td className="td-right">Current Postcode: </td>
+                        <td><input className="input-form" type="text" name="postcode" value={formData.postcode} onChange={handleChange} required/></td>
+                        <td className="ast">*</td>
+                    </tr>
+                    <tr>
+                        <td className="td-right">Phone Number:</td> 
+                        <td><input className="input-form" type="text" name="phone" value={formData.phone} onChange={handleChange} required/></td>
+                        <td className="ast">*</td>
+                    </tr>
+                    <tr>
+                        <td className="td-right">Property: </td>
+                        <td><select className="input-form" name="propid" value={formData.propid} onChange={handleChange}>
+                                <option value="">Select Property</option>
+                                    {properties.map((property)=>(
+                                    <option key={property.id} value={property.id}>
+                                    {property.address},
+                                    {property.postcode}
+                                </option>
+                                ))}
+                            </select>
+                        </td>
+                        <td className="ast">*</td>
+                    </tr>
+                    <tr>
+                        <td className="td-right">Choose Date: </td>
+                        <td><input className="input-form" type="date" name="date" value={formData.date} onChange={handleChange}/></td>
+                        <td className="ast">*</td>     
+                    </tr>
+                    <tr>
+                        <td className="td-right" >Choose Time Slot: </td>
+                        <td><select className="select-form" name="time" onChange={handleChange} value={formData.time}>
+                                <option value=''></option>
+                                <option value="8am-9am">8am-9am</option>
+                                <option value="9am-10am">9am-10am</option>
+                                <option value="10am-11am">10am-11am</option>
+                                <option value="11am-12pm">11am-12pm</option>
+                                <option value="12pm-1pm">12pm-1pm</option>
+                                <option value="1pm-2pm">1pm-2pm</option>
+                                <option value="2pm-3pm">2pm-3pm</option>
+                                <option value="3pm-4pm">3pm-4pm</option>
+                                <option value="4pm-5pm">4pm-5pm</option>
+                            </select>
+                        </td>
+                        <td className="ast">*</td>
+                    </tr>
+               </h3> </table>
+            
                 <br/>
-                <label>
-                    Last Name: <input type="text" name="surname" value={formData.surname} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Current Address: <input type="text" name="address" value={formData.address} onChange={handleChange}required/>
-                </label>
-                <br/>
-                <label>
-                    Current Postcode: <input type="text" name="postcode" value={formData.postcode} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Phone Number: <input type="text" name="phone" value={formData.phone} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    
-                    Property: <select name="propid" value={formData.propid} onChange={handleChange}>
-                        <option value="">Select Property</option>
-                        {properties.map((property)=>(
-                        <option key={property.id} value={property.id}>
-                            {property.address},
-                            {property.postcode}
-                            </option>
-                            ))}
-                    </select>
-                </label>
-                <br/>
-                <label>
-                    Choose Date: <input type="date" name="date" value={formData.date} onChange={handleChange}/>
-                </label>
-                <br/>
-                Choose Time Slot: <select className="time" name='time' onChange={handleChange} value={formData.time}>
-                    <option value=''>Time Slot</option>
-                    <option value="8am-9am">8am-9am</option>
-                    <option value="9am-10am">9am-10am</option>
-                    <option value="10am-11am">10am-11am</option>
-                    <option value="11am-12pm">11am-12pm</option>
-                    <option value="12pm-1pm">12pm-1pm</option>
-                    <option value="1pm-2pm">1pm-2pm</option>
-                    <option value="2pm-3pm">2pm-3pm</option>
-                    <option value="3pm-4pm">3pm-4pm</option>
-                    <option value="4pm-5pm">4pm-5pm</option>
-                </select>
-                <br/>
-                <button type="submit">Book</button>
+                <footer className="center">
+                    <button className="form-btn" type="submit">Request viewing</button>
+                </footer>
             </form>
+
+        
         </div>
     )
 }

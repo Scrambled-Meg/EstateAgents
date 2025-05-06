@@ -40,7 +40,7 @@ const PropertyFilter = () => {
     }
  
     const resetFilters = () => {
-        setFilters({type: '', bathroom: '', bedroom: '', garden: ''})
+        setFilters({type: '', bathroom: '', bedroom: '', garden: '', minPrice: '', maxPrice: ''})
     }
 
     const min = filters.minPrice ? parseFloat(filters.minPrice) : null
@@ -62,12 +62,13 @@ const PropertyFilter = () => {
  
     return (
         <>
-            
+           <header>
+        
             <Link className="menu-btn" to="/property-add"> Register a Property </Link> 
             <Link className="menu-btn" to="/property-update"> Update a Property </Link> 
             <Link className="menu-btn" to="/properties-withdrawn"> View Withdrawn Properties </Link> 
-            <br /><br />
-        
+            <br /></header> 
+        <br /><br />
             <h1 className="center"> Properties for Sale </h1> <br />
 
             <div className="filter-bar" style={{marginBotton:'1rem'}}>
@@ -106,12 +107,15 @@ const PropertyFilter = () => {
             </div>
             <br /><br />
             <div className="propGrid">  
-            
+
+                
+               
+
                 {filteredProperties.map(property => (
-                    <div className="propCard">
+                    <div className="propCard"><br />
                         <h1 id="propCardAddress"> {property.address}  </h1> 
                         <h3 id="propCardPostcode"> {property.postcode} </h3>
-                        <h2>{property.status} - £{property.price} </h2>   
+                        <h2> £{property.price} </h2>   
                     
                         <House />
 
@@ -130,12 +134,20 @@ const PropertyFilter = () => {
 
                             </table>
                         </section>
-
+                        <br />
                         <h2>This {property.type} property is being sold by: </h2>
-                        <h2> {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname}  </h2>
-                        <Link className="menu-btn" to="/properties-booking"> Book a Viewing </Link> 
-                    </ div>
+                        <h2> {findSeller(property.sellerId).firstName} {findSeller(property.sellerId).surname}  </h2><br />
+                        <Link className="reset-btn" to="/properties-booking"> Book a Viewing </Link> <br />
+                        </ div>
                 ))}
+
+                {filteredProperties.length == 0 ? 
+                    <div className="propCard2">  
+                    <h2> Unfortunately no properties were found for your search</h2>
+                    <h3> You may need to adjust your search criteria </h3>
+                    </div> 
+                    
+                     : ""}
             
             </div>
             <br /><br /><br />

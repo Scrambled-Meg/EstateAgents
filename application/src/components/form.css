@@ -1,0 +1,50 @@
+.center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-btn {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    padding: 1rem;
+    background-color: #5D5A5D;
+    color: white;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    box-shadow: #5D5A5D 0px 8px 24px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 15px;
+  
+
+  }
+
+  .form-btn:hover {
+    background-color: #AA7F5A;
+    color: white;
+  }
+
+  .table-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .td-right {
+    text-align: right;
+  }
+
+  .ast {
+    color: red;
+  }
+
+  .input-form {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .select-form {
+    width: 100%;
+    font-size: 15px;
+  }

@@ -31,7 +31,7 @@ const PropertiesList = () => {
     // returns full buyer object using a filter
     const findBuyer=(buyerId) => {
     let buyer = buyerData.filter( (buyer) => buyer.id == buyerId) 
-    return buyer.length == 0 ? "Not Known" : buyer[0]
+    return 
     }
 
     // returns full seller object using a filter

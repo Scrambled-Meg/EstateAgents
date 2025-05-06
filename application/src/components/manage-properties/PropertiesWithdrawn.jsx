@@ -72,7 +72,7 @@ const PropertiesWithdrawn= () => {
                     <div className="propCard">
                         <h1 id="propCardAddress"> {property.address}  </h1> 
                         <h3 id="propCardPostcode"> {property.postcode} </h3>
-                        <h2>{property.status} - £{property.price} </h2>   
+                        <h2> £{property.price} </h2>   
                     
                         <House />
 
