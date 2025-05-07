@@ -191,5 +191,42 @@
       "phone": ""
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "id": "1",
+      "firstname": "James",
+      "surname": "Earl Jones",
+      "phone": "01413576861",
+      "propid": "9485",
+      "date": "2025-05-08",
+      "time": "8am-9am"
+    },
+    {
+      "id": "2",
+      "firstname": "Steve",
+      "surname": "Rogers",
+      "phone": "01132429176",
+      "propid": "9485",
+      "date": "2025-05-08",
+      "time": "11am-12pm"
+    },
+    {
+      "id": "3",
+      "firstname": "Luke",
+      "surname": "Skywalker",
+      "phone": "602089962282",
+      "propid": "5948",
+      "date": "2025-06-15",
+      "time": "4pm-5pm"
+    },
+    {
+      "id": "4",
+      "firstname": "Bilbo",
+      "surname": "Baggins",
+      "phone": "00000000000",
+      "propid": "2",
+      "date": "2025-05-10",
+      "time": "8am-9am"
+    }
+  ]
 }

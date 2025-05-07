@@ -146,7 +146,7 @@ const PropertyViewBooking = () => {
                         <option value=''> Select booking </option>
                         {bookings.map((booking) => (
                             <option key={booking.id} value={booking.id}>
-                                    {booking.firstname} - {booking.address} - {booking.date} - {booking.time}
+                                    {booking.firstname} - {booking.date} - {booking.time}
                             </option>
                         ))}
                     </select>

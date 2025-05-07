@@ -62,11 +62,11 @@ const PropertyFilter = () => {
  
     return (
         <>
-           <header>
+           <header className="center">
         
-            <Link className="menu-btn" to="/property-add"> Register a Property </Link> 
-            <Link className="menu-btn" to="/property-update"> Update a Property </Link> 
-            <Link className="menu-btn" to="/properties-withdrawn"> View Withdrawn Properties </Link> 
+            <Link className="reset-btn" to="/property-add"> Register a Property </Link> 
+            <Link className="reset-btn" to="/property-update"> Update a Property </Link> 
+            <Link className="reset-btn" to="/properties-withdrawn"> View Withdrawn Properties </Link> 
             <br /></header> 
         <br /><br />
             <h1 className="center"> Properties for Sale </h1> <br />

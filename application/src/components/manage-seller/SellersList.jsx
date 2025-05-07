@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react"
+import { Link } from "react-router-dom";
 
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -21,10 +22,12 @@ const SellersList=()=>{
     useEffect(getData,[])
     
     return(
-        <><br />
-
-        <h1 className="center">List of Sellers</h1>
-        
+        <>
+        <br />
+        <h1 className="center"> Our Sellers</h1><br />
+        <header className="center">
+            <Link className="reset-btn" to="/seller-add"> Register as a seller </Link> 
+        </header> 
         {
             sellersData.map((seller)=>
             <div className="card">  
