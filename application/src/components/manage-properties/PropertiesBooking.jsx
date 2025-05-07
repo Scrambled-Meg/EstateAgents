@@ -3,9 +3,10 @@ import "../form.css"
  
 const PropertyViewBooking = () => {
     const [properties, setProperties] = useState([])
-    const[formData, setFormData] = useState({firstname: '',surname:'', phone: '', propid: '', date:'', time:''})
+    const[formData, setFormData] = useState({buyerid: '', propid: '', date:'', time:''})
     const [bookings, setBookings] = useState([])
     const [selectedBookingId, setSelectedBookingId] = useState('')
+    const [buyers, setBuyers] = useState([])
  
     useEffect(()=>{async function fetchProperties() {
         const response = await fetch("http://localhost:3000/property")
@@ -13,6 +14,14 @@ const PropertyViewBooking = () => {
         setProperties(data)
         }
         fetchProperties()
+    }, [])
+ 
+    useEffect(()=>{async function fetchBuyers() {
+        const response = await fetch("http://localhost:3000/buyer")
+        const data = await response.json()
+        setBuyers(data)
+        }
+        fetchBuyers()
     }, [])
  
     useEffect (() =>{
@@ -54,6 +63,7 @@ const PropertyViewBooking = () => {
                 body: JSON.stringify(formData)
             })
             alert('Booking Confirmed!')
+            setFormData({buyerid: '', propid: '', date:'', time:''})
         }
     }
  
@@ -78,25 +88,24 @@ const PropertyViewBooking = () => {
             <form onSubmit={handleSubmit} >
                 <table className="table-center">
                     <h3>
+ 
                     <tr>
-                        <td className="td-right">First Name: </td>
-                        <td><input className="input-form" type="text" name="firstname" value={formData.firstName} onChange={handleChange} required/></td>
-                        <td className="ast">*</td>
-                    </tr>
-                    <tr>
-                        <td className="td-right">Last Name: </td>
-                        <td><input className="input-form" type="text" name="surname" value={formData.surname} onChange={handleChange} required/></td>
-                        <td className="ast">*</td>
-                    </tr>
-                    <tr>
-                        <td className="td-right">Phone Number:</td>
-                        <td><input className="input-form" type="text" name="phone" value={formData.phone} onChange={handleChange} required/></td>
+                        <td className="td-right">Name (Buyer): </td>
+                        <td><select className="input-form" name="buyerid" value={formData.buyerid} onChange={handleChange}>
+                                <option value=""></option>
+                                    {buyers.map((buyer)=>(
+                                    <option key={buyer.id} value={buyer.id}>
+                                    {buyer.firstName} {buyer.surname}
+                                </option>
+                                ))}
+                            </select>
+                        </td>
                         <td className="ast">*</td>
                     </tr>
                     <tr>
                         <td className="td-right">Property: </td>
                         <td><select className="input-form" name="propid" value={formData.propid} onChange={handleChange}>
-                                <option value="">Select Property</option>
+                                <option value=""></option>
                                     {properties.map((property)=>(
                                     <option key={property.id} value={property.id}>
                                     {property.address},
@@ -146,10 +155,12 @@ const PropertyViewBooking = () => {
                         <option value=''> Select booking </option>
                         {bookings.map((booking) => {
                             const property = properties.find((p) => p.id === booking.propid)
-                            const propertyName = property ? property.address : 'Unknown Property'
+                            const propertyName = property ? property.address: 'Unknown Property'
+                            const buyer = buyers.find((b) => b.id === booking.buyerid)
+                            const buyerName = buyer ? buyer.firstName : 'Unknown Buyer'
                             return(
                                 <option key={booking.id} value={booking.id}>
-                                        {booking.firstname} - {propertyName} - {booking.date} - {booking.time}
+                                        {buyerName} - {propertyName} - {booking.date} - {booking.time}
                                 </option>
                             )
                         })}
