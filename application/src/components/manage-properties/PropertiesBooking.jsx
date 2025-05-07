@@ -3,7 +3,9 @@ import "../form.css"
  
 const PropertyViewBooking = () => {
     const [properties, setProperties] = useState([])
-    const[formData, setFormData] = useState({firstname: '',surname:'', address:'', postcode:'', phone: '', propid: '', date:'', time:''})
+    const[formData, setFormData] = useState({firstname: '',surname:'', phone: '', propid: '', date:'', time:''})
+    const [bookings, setBookings] = useState([])
+    const [selectedBookingId, setSelectedBookingId] = useState('')
  
     useEffect(()=>{async function fetchProperties() {
         const response = await fetch("http://localhost:3000/property")
@@ -12,6 +14,17 @@ const PropertyViewBooking = () => {
         }
         fetchProperties()
     }, [])
+ 
+    useEffect (() =>{
+        fetchBookings()
+    }, [])
+ 
+    const fetchBookings = () => {
+        fetch("http://localhost:3000/bookings")
+            .then((res) => res.json())
+            .then((data) => setBookings(data))
+    }
+    
  
     const handleChange = (e) => {
         setFormData({
@@ -44,11 +57,24 @@ const PropertyViewBooking = () => {
         }
     }
  
+    const handleCancel = async (e) => {
+        e.preventDefault()
+        if (!selectedBookingId) return
+ 
+        const confirmed = window.confirm('Are you sure you would like to cancel?')
+        if (!confirmed) return
+ 
+        const res = await fetch(`http://localhost:3000/bookings/${selectedBookingId}`, {method: 'DELETE'})
+        alert('Booking Canceled')
+        setSelectedBookingId('')
+        fetchBookings()
+    }
+ 
     return (
         <div>
             <br />
             <h1 className="center">Book a Viewing</h1><br />
-
+ 
             <form onSubmit={handleSubmit} >
                 <table className="table-center">
                     <h3>
@@ -63,17 +89,7 @@ const PropertyViewBooking = () => {
                         <td className="ast">*</td>
                     </tr>
                     <tr>
-                        <td className="td-right">Current Address:</td>
-                        <td><input className="input-form" type="text" name="address" value={formData.address} onChange={handleChange}required/></td>
-                        <td className="ast">*</td>
-                    </tr>
-                    <tr>
-                        <td className="td-right">Current Postcode: </td>
-                        <td><input className="input-form" type="text" name="postcode" value={formData.postcode} onChange={handleChange} required/></td>
-                        <td className="ast">*</td>
-                    </tr>
-                    <tr>
-                        <td className="td-right">Phone Number:</td> 
+                        <td className="td-right">Phone Number:</td>
                         <td><input className="input-form" type="text" name="phone" value={formData.phone} onChange={handleChange} required/></td>
                         <td className="ast">*</td>
                     </tr>
@@ -113,14 +129,35 @@ const PropertyViewBooking = () => {
                         </td>
                         <td className="ast">*</td>
                     </tr>
-               </h3> </table>
+                    </h3>
+                </table>
             
                 <br/>
                 <footer className="center">
                     <button className="form-btn" type="submit">Request viewing</button>
                 </footer>
             </form>
-
+            <br /><br /><br />
+            <h2 className="center"> Cancel a booking </h2><br />
+            <form onSubmit={(e) => handleCancel(e)}>
+                <label className="center">
+                    <h3 className="center">Select a booking to cancel:</h3> <br /> 
+                    <select className="select-form2" value={selectedBookingId} onChange={(e) => setSelectedBookingId(e.target.value)} required>
+                        <option value=''> Select booking </option>
+                        {bookings.map((booking) => (
+                            <option key={booking.id} value={booking.id}>
+                                    {booking.firstname} - {booking.address} - {booking.date} - {booking.time}
+                            </option>
+                        ))}
+                    </select>
+                </label><br />
+                <footer className="center">
+                    <button className="form-btn" type="submit">Cancel booking</button>
+    
+                </footer>
+                        
+            </form>
+            <br /><br /><br />
         
         </div>
     )
