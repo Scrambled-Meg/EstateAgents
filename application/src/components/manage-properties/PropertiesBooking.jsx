@@ -141,14 +141,18 @@ const PropertyViewBooking = () => {
             <h2 className="center"> Cancel a booking </h2><br />
             <form onSubmit={(e) => handleCancel(e)}>
                 <label className="center">
-                    <h3 className="center">Select a booking to cancel:</h3> <br /> 
+                    <h3 className="center">Select a booking to cancel:</h3> <br />
                     <select className="select-form2" value={selectedBookingId} onChange={(e) => setSelectedBookingId(e.target.value)} required>
                         <option value=''> Select booking </option>
-                        {bookings.map((booking) => (
-                            <option key={booking.id} value={booking.id}>
-                                    {booking.firstname} - {booking.date} - {booking.time}
-                            </option>
-                        ))}
+                        {bookings.map((booking) => {
+                            const property = properties.find((p) => p.id === booking.propid)
+                            const propertyName = property ? property.address : 'Unknown Property'
+                            return(
+                                <option key={booking.id} value={booking.id}>
+                                        {booking.firstname} - {propertyName} - {booking.date} - {booking.time}
+                                </option>
+                            )
+                        })}
                     </select>
                 </label><br />
                 <footer className="center">
